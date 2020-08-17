@@ -400,7 +400,7 @@ class Signer
       return
     end
 
-    transforms_node.add_child(transform_node('http://www.w3.org/2001/10/xml-exc-c14n#', options))
+    transforms_node.add_child(transform_node(canonicalize_id, options))
     transforms_node.add_child(transform_node('http://www.w3.org/2000/09/xmldsig#enveloped-signature', options)) if options[:enveloped]
   end
 
