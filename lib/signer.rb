@@ -61,7 +61,7 @@ class Signer
     }
   }.freeze
 
-  def initialize(document, noblanks: true, wss: true, canonicalize_algorithm: :c14n_exec_1_0)
+  def initialize(document, noblanks: false, wss: false, canonicalize_algorithm: :c14n_1_0)
     self.document = Nokogiri::XML(document.to_s) do |config|
       config.noblanks if noblanks
     end
